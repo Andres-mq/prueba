@@ -80,8 +80,10 @@
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
+	if(message.payloadString=='led1_state'){
 	sen=document.getElementById('led1_state');
-	sen.innerHTML=message.payloadString;
+	sen.innerHTML=message.payloadString;}
+	if(message.payloadString=='led2_state'){
 	doAction(message.payloadString);
 	sen=document.getElementById('led2_state');
 	sen.innerHTML=message.payloadString;
@@ -91,7 +93,7 @@
 	doAction(message.payloadString);
 	sen=document.getElementById('led4_state');
 	sen.innerHTML=message.payloadString;
-	doAction(message.payloadString);
+	doAction(message.payloadString);}
   }
   
     // called when a message arrives
