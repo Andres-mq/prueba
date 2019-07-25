@@ -81,8 +81,14 @@
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	sen=document.getElementById('led1_state');
+	sen.innerHTML=message.payloadString;
+	doAction(message.payloadString);
 	sen=document.getElementById('led2_state');
+	sen.innerHTML=message.payloadString;
+	doAction(message.payloadString);
 	sen=document.getElementById('led3_state');
+	sen.innerHTML=message.payloadString;
+	doAction(message.payloadString);
 	sen=document.getElementById('led4_state');
 	sen.innerHTML=message.payloadString;
 	doAction(message.payloadString);
