@@ -85,17 +85,17 @@
 	sen.innerHTML=message.payloadString;
 	doAction(message.payloadString);}
 	
-	if(message.payloadString=='[object HTMLTextAreaElement]rp:led2_state:0'){
+	else if(message.payloadString=='[object HTMLTextAreaElement]rp:led2_state:0'){
 	sen=document.getElementById('led2_state');
 	sen.innerHTML=message.payloadString;
 	doAction(message.payloadString);}
-	 
-	if(message.payloadString=='[object HTMLTextAreaElement]rp:led3_state:0'){
+	
+	else if(message.payloadString=='[object HTMLTextAreaElement]rp:led3_state:0'){
 	sen=document.getElementById('led3_state');
 	sen.innerHTML=message.payloadString;
 	doAction(message.payloadString);}
 	
-	if(message.payloadString=='[object HTMLTextAreaElement]rp:led4_state:0'){ 
+	else if(message.payloadString=='[object HTMLTextAreaElement]rp:led4_state:0'){ 
 	sen=document.getElementById('led4_state');
 	sen.innerHTML=message.payloadString;
 	doAction(message.payloadString);}
