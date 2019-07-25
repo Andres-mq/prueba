@@ -78,6 +78,14 @@
   }
 
   // called when a message arrives
+
+function onMessageArrived(message) {
+    console.log("onMessageArrived:"+message.payloadString);
+	sen=document.getElementById('led2_state');
+	sen.innerHTML=message.payloadString;
+	doAction(message.payloadString);
+  }			
+			
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	if(message.payloadString=='[object HTMLTextAreaElement]rp:led1_state:0'){
