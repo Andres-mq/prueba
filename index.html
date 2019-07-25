@@ -80,9 +80,10 @@
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-	if(message.payloadString=='led1_state'){
+	if(message.payloadString=='led1_state:0'){
 	sen=document.getElementById('led1_state');
 	sen.innerHTML=message.payloadString;}
+	
 	if(message.payloadString=='led2_state'){
 	doAction(message.payloadString);
 	sen=document.getElementById('led2_state');
