@@ -82,16 +82,20 @@
     console.log("onMessageArrived:"+message.payloadString);
 	if(message.payloadString=='[object HTMLTextAreaElement]rp:led1_state:0'){
 	sen=document.getElementById('led1_state');
-	sen.innerHTML=message.payloadString;}
+	sen.innerHTML=message.payloadString;
+	doAction(message.payloadString);}
 	
-	if(message.payloadString=='led2_state'){
-	doAction(message.payloadString);
+	if(message.payloadString=='[object HTMLTextAreaElement]rp:led2_state:0'){
 	sen=document.getElementById('led2_state');
 	sen.innerHTML=message.payloadString;
-	doAction(message.payloadString);
+	doAction(message.payloadString);}
+	 
+	if(message.payloadString=='[object HTMLTextAreaElement]rp:led3_state:0'){
 	sen=document.getElementById('led3_state');
 	sen.innerHTML=message.payloadString;
-	doAction(message.payloadString);
+	doAction(message.payloadString);}
+	
+	if(message.payloadString=='[object HTMLTextAreaElement]rp:led4_state:0'){ 
 	sen=document.getElementById('led4_state');
 	sen.innerHTML=message.payloadString;
 	doAction(message.payloadString);}
