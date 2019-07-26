@@ -79,14 +79,37 @@
 
   // called when a message arrives
 
-function onMessageArrived(message) {
-    console.log("onMessageArrived:"+message.payloadString);
-	sen=document.getElementById('led2_state');
-	sen.innerHTML=message.payloadString;
-	doAction(message.payloadString);
-  }			
-			
   function onMessageArrived(message) {
+    console.log("onMessageArrived:"+message.payloadString);
+	switch(message.payloadString) {
+		case 'led1_state':
+			sen=document.getElementById('led1_state');
+			sen.innerHTML=message.payloadString;
+			doAction(message.payloadString);
+			break;
+		
+		case 'led2_state':
+			sen=document.getElementById('led2_state');
+			sen.innerHTML=message.payloadString;
+			doAction(message.payloadString);
+			break;
+		case 'led3_state':
+			sen=document.getElementById('led3_state');
+			sen.innerHTML=message.payloadString;
+			doAction(message.payloadString);
+			break;
+		
+		case 'led4_state':
+			sen=document.getElementById('led4_state');
+			sen.innerHTML=message.payloadString;
+			doAction(message.payloadString);
+			break;
+		 
+		default:
+		}
+}			
+			
+ /* function onMessageArrived(message) {-
     console.log("onMessageArrived:"+message.payloadString);
 	if(message.payloadString=='[object HTMLTextAreaElement]rp:led1_state:0'){
 	sen=document.getElementById('led1_state');
@@ -107,7 +130,7 @@ function onMessageArrived(message) {
 	sen=document.getElementById('led4_state');
 	sen.innerHTML=message.payloadString;
 	doAction(message.payloadString);}
-  }
+  }*//
   
     // called when a message arrives
   function sendMessage(msg) {
