@@ -79,30 +79,27 @@
 
   // called when a message arrives
 
-  function onMessageArrived(message) {
+ function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-	n=msg.split(":")[0];
-	f=msg.split(":")[1];
-	v=msg.split(":")[2]
-	switch(f) {
-		case 'led1_state':
+	switch(message.payloadString) {
+		case message.payloadString == 'led1_state':
 			sen=document.getElementById('led1_state');
 			sen.innerHTML=message.payloadString;
 			doAction(message.payloadString);
 			break;
 		
-		case 'led2_state':
+		case message.payloadString == 'led2_state':
 			sen=document.getElementById('led2_state');
 			sen.innerHTML=message.payloadString;
 			doAction(message.payloadString);
 			break;
-		case 'led3_state':
+		case message.payloadString == 'led3_state':
 			sen=document.getElementById('led3_state');
 			sen.innerHTML=message.payloadString;
 			doAction(message.payloadString);
 			break;
 		
-		case 'led4_state':
+		case message.payloadString == 'led4_state':
 			sen=document.getElementById('led4_state');
 			sen.innerHTML=message.payloadString;
 			doAction(message.payloadString);
@@ -110,8 +107,8 @@
 		 
 		default:
 		}
-}			
-			
+}
+  			
  /* function onMessageArrived(message) {-
     console.log("onMessageArrived:"+message.payloadString);
 	if(message.payloadString=='[object HTMLTextAreaElement]rp:led1_state:0'){
